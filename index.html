@@ -3,29 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GREEN STAR AIRCON PTE. LTD. - Professional Services</title>
-    <!-- Tailwind CSS -->
+    <title>GREEN STAR AIRCON PTE. LTD. - Service Replica</title>
+    <!-- Tailwind CSS for Styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome -->
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Inter for a clean, modern look -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'brand-green': '#00A651',
-                        'brand-dark': '#0B2919',
-                        'brand-light': '#E8F5E9',
+                        'brand-green': '#00A651', // Color from the new logo
+                        'brand-black': '#1a1a1a',
+                        'brand-yellow': '#FFD700',
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    boxShadow: {
-                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
-                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                        sans: ['Roboto', 'sans-serif'],
                     }
                 }
             }
@@ -33,151 +29,102 @@
     </script>
 
     <style>
-        /* Modern Utilities */
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+        /* Custom Styles for Comic/Pop Art feel */
+        .comic-shadow {
+            box-shadow: 4px 4px 0px #000;
+            border: 2px solid #000;
         }
-        .gradient-text {
-            background: linear-gradient(to right, #00A651, #007a3d);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .comic-header {
+            text-shadow: 2px 2px 0px #000;
         }
-        .step-connector::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 100%;
-            width: 100%;
-            height: 2px;
-            background: #E5E7EB;
-            z-index: 0;
-            transform: translateY(-50%);
+        .dot-nav .active {
+            background-color: #00A651;
+            transform: scale(1.5);
         }
-        .step-connector:last-child::after {
-            display: none;
-        }
-        /* Hide scrollbar for smooth horizontal scrolling if needed */
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
+        .step-card:hover {
+            transform: translateY(-5px);
+            transition: 0.3s;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-700 font-sans antialiased selection:bg-brand-green selection:text-white">
+<body class="bg-gray-50 text-gray-800 font-sans relative">
 
-    <!-- Sticky Right Navigation (Clean Dots) -->
-    <div class="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 hidden lg:flex flex-col gap-4 dot-nav">
-        <a href="#hero" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-brand-green transition-all duration-300" title="Home"></a>
-        <a href="#services" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-brand-green transition-all duration-300" title="Services"></a>
-        <a href="#pricing" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-brand-green transition-all duration-300" title="Pricing"></a>
-        <a href="#benefits" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-brand-green transition-all duration-300" title="Why Us"></a>
-        <a href="#testimonials" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-brand-green transition-all duration-300" title="Reviews"></a>
-        <a href="#contact" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-brand-green transition-all duration-300" title="Book Now"></a>
+    <!-- Sticky Right Navigation (Scrollspy) -->
+    <div class="fixed right-4 top-1/2 transform -translate-y-1/2 z-50 hidden md:flex flex-col gap-3 dot-nav">
+        <a href="#hero" class="w-3 h-3 bg-gray-400 rounded-full transition-all duration-300" title="Home"></a>
+        <a href="#services" class="w-3 h-3 bg-gray-400 rounded-full transition-all duration-300" title="Services"></a>
+        <a href="#pricing" class="w-3 h-3 bg-gray-400 rounded-full transition-all duration-300" title="Pricing"></a>
+        <a href="#benefits" class="w-3 h-3 bg-gray-400 rounded-full transition-all duration-300" title="Why Us"></a>
+        <a href="#testimonials" class="w-3 h-3 bg-gray-400 rounded-full transition-all duration-300" title="Reviews"></a>
+        <a href="#process" class="w-3 h-3 bg-gray-400 rounded-full transition-all duration-300" title="Process"></a>
+        <a href="#contact" class="w-3 h-3 bg-gray-400 rounded-full transition-all duration-300" title="Book Now"></a>
     </div>
 
-    <!-- Sticky WhatsApp Button (Elegant) -->
-    <a href="#" class="fixed bottom-6 left-6 z-50 flex items-center gap-2 bg-green-500 text-white px-5 py-3 rounded-full shadow-soft hover:bg-green-600 transition-all hover:-translate-y-1 group">
-        <i class="fab fa-whatsapp text-2xl"></i>
-        <span class="font-semibold hidden group-hover:inline-block transition-all">WhatsApp Us</span>
+    <!-- Sticky WhatsApp Button -->
+    <a href="#" class="fixed bottom-5 left-5 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition comic-shadow flex items-center justify-center animate-bounce">
+        <i class="fab fa-whatsapp text-3xl"></i>
     </a>
 
-    <!-- TOP BAR (Contact Info) -->
-    <div class="bg-brand-dark text-white py-2 text-xs md:text-sm">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <span><i class="fas fa-map-marker-alt mr-2 text-brand-green"></i>75 Lorong 14 Geylang, #01-01</span>
-                <span class="hidden md:inline text-gray-400">|</span>
-                <span class="hidden md:inline"><i class="fas fa-id-card mr-2 text-brand-green"></i>UEN: 202600425H</span>
-            </div>
-            <div class="font-bold text-brand-green">OPEN DAILY: 9AM - 9PM</div>
-        </div>
-    </div>
-
-    <!-- NAVBAR -->
-    <nav class="glass-nav sticky top-0 z-40 border-b border-gray-100 shadow-sm">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo Area -->
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-brand-green rounded-lg flex items-center justify-center text-white text-xl">
-                    <i class="fas fa-leaf"></i>
+    <!-- HEADER / HERO SECTION -->
+    <section id="hero" class="relative bg-white pt-4 pb-12">
+        <div class="container mx-auto px-4">
+            <!-- Top Bar -->
+            <div class="flex justify-between items-center mb-8 border-b-2 border-black pb-2">
+                <div class="flex items-center gap-2">
+                    <!-- Placeholder for Company Logo -->
+                    <img src="https://placehold.co/150x50/00A651/ffffff?text=GREEN+STAR+AIRCON" alt="GREEN STAR AIRCON PTE. LTD. Logo" class="h-12 comic-shadow">
                 </div>
+                <a href="#contact" class="bg-brand-green text-white px-4 py-2 font-bold uppercase comic-shadow text-sm">Call Us Now</a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <!-- Left Content -->
                 <div>
-                    <h1 class="text-xl font-bold text-gray-900 leading-none tracking-tight">GREEN STAR</h1>
-                    <span class="text-xs text-brand-green font-semibold tracking-widest uppercase">Aircon Pte. Ltd.</span>
-                </div>
-            </div>
-            
-            <a href="#contact" class="bg-brand-green text-white px-6 py-2.5 rounded-lg font-semibold shadow-lg shadow-green-200 hover:bg-green-700 transition-all text-sm">
-                Book Appointment
-            </a>
-        </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <section id="hero" class="relative pt-16 pb-24 overflow-hidden bg-white">
-        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-green-50 rounded-full blur-3xl opacity-50"></div>
-        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-blue-50 rounded-full blur-3xl opacity-50"></div>
-
-        <div class="container mx-auto px-6 relative">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <!-- Text Content -->
-                <div class="w-full md:w-1/2 space-y-6">
-                    <div class="inline-flex items-center gap-2 bg-green-50 text-brand-green px-4 py-1.5 rounded-full text-sm font-semibold border border-green-100">
-                        <i class="fas fa-star text-xs"></i> #1 Choice in Singapore
-                    </div>
-                    
-                    <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-                        Professional Aircon <br>
-                        <span class="gradient-text">Care & Solutions</span>
+                    <span class="bg-brand-yellow px-3 py-1 text-xs font-bold border-2 border-black shadow-[2px_2px_0px_#000]">SG #1 CHOICE</span>
+                    <h1 class="text-5xl md:text-6xl font-black mt-4 leading-tight">
+                        FAST, <span class="text-brand-green">AFFORDABLE</span> & PROFESSIONAL!
                     </h1>
-                    
-                    <p class="text-lg text-gray-600 leading-relaxed max-w-lg">
-                        Ensure cleaner air and lower energy bills with Singapore's most trusted aircon specialists. Fast, affordable, and fully insured.
+                    <p class="mt-4 text-lg font-medium text-gray-600">
+                        Expert Aircon Servicing, Repair & Installation for Homes & Offices.
                     </p>
-
-                    <div class="flex flex-wrap gap-4 pt-2">
-                        <a href="#pricing" class="px-8 py-3.5 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition shadow-lg">
-                            View Pricing
-                        </a>
-                        <a href="#services" class="px-8 py-3.5 bg-white text-gray-900 border border-gray-200 rounded-lg font-semibold hover:bg-gray-50 transition">
-                            Our Services
-                        </a>
+                    
+                    <!-- Trust Badge -->
+                    <div class="mt-6 flex items-center gap-4">
+                        <div class="bg-white border-2 border-black p-3 comic-shadow flex items-center gap-2">
+                            <i class="fab fa-google text-brand-green text-2xl"></i>
+                            <div>
+                                <div class="font-black text-xl">7,000+</div>
+                                <div class="text-xs uppercase font-bold">5-Star Reviews</div>
+                            </div>
+                        </div>
+                        <div class="text-sm font-bold text-gray-500">
+                            As Featured In:<br>
+                            <span class="text-black">MediaOne, Shopee, HardwareZone</span>
+                        </div>
                     </div>
 
-                    <!-- Trust Indicators -->
-                    <div class="flex items-center gap-6 pt-6 border-t border-gray-100 mt-8">
-                        <div>
-                            <p class="text-3xl font-bold text-gray-900">7k+</p>
-                            <p class="text-xs text-gray-500 uppercase font-medium">5-Star Reviews</p>
-                        </div>
-                        <div class="w-px h-10 bg-gray-200"></div>
-                        <div>
-                            <p class="text-3xl font-bold text-gray-900">15+</p>
-                            <p class="text-xs text-gray-500 uppercase font-medium">Years Experience</p>
-                        </div>
-                        <div class="w-px h-10 bg-gray-200"></div>
-                        <div>
-                            <p class="text-3xl font-bold text-gray-900">165k</p>
-                            <p class="text-xs text-gray-500 uppercase font-medium">Units Serviced</p>
-                        </div>
+                    <div class="mt-8">
+                        <a href="#pricing" class="bg-brand-green text-white text-xl font-bold py-3 px-8 inline-block comic-shadow hover:bg-green-700 transition">
+                            CHECK PRICES
+                        </a>
                     </div>
                 </div>
 
-                <!-- Hero Image -->
-                <div class="w-full md:w-1/2 relative">
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
-                        <img src="https://placehold.co/800x600/f3f4f6/111827?text=Professional+Technician+At+Work" alt="Technician" class="w-full h-full object-cover">
+                <!-- Right Image (Technician) -->
+                <div class="relative">
+                    <div class="bg-gray-200 border-4 border-black h-80 w-full flex items-center justify-center relative overflow-hidden comic-shadow">
+                        <!-- Placeholder for Technician Image -->
+                        <img src="https://placehold.co/600x500/eee/31343C?text=Technician+Photo" alt="Technician" class="object-cover h-full w-full">
                         
-                        <!-- Floating Card -->
-                        <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur p-4 rounded-xl shadow-lg border border-gray-100 max-w-xs">
-                            <div class="flex items-start gap-3">
-                                <div class="bg-green-100 p-2 rounded-full text-brand-green">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                                <div>
-                                    <p class="font-bold text-sm text-gray-900">90 Days Warranty</p>
-                                    <p class="text-xs text-gray-500">We guarantee our workmanship for your peace of mind.</p>
-                                </div>
+                        <!-- Floating Stats Card -->
+                        <div class="absolute bottom-4 left-4 bg-white border-2 border-black p-3 shadow-[4px_4px_0px_#000]">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i class="fas fa-check-circle text-green-600"></i>
+                                <span class="font-bold text-sm">15 Years Exp.</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-tools text-brand-green"></i>
+                                <span class="font-bold text-sm">165k+ Units Serviced</span>
                             </div>
                         </div>
                     </div>
@@ -186,532 +133,402 @@
         </div>
     </section>
 
-    <!-- SERVICES GRID -->
-    <section id="services" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 max-w-2xl mx-auto">
-                <h2 class="text-brand-green font-bold tracking-wide uppercase text-sm mb-2">Our Expertise</h2>
-                <h3 class="text-3xl font-bold text-gray-900">Comprehensive Cooling Solutions</h3>
-                <p class="mt-4 text-gray-600">From routine maintenance to complex installations, we handle it all with precision.</p>
-            </div>
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-black uppercase mb-2">Our Services</h2>
+            <p class="mb-10 text-gray-600 font-bold">We handle everything from simple cleaning to complex overhauls.</p>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Card 1 -->
-                <div class="bg-white p-8 rounded-2xl shadow-card hover:shadow-soft transition-all duration-300 hover:-translate-y-1 group border border-transparent hover:border-green-100">
-                    <div class="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center text-brand-green text-2xl mb-6 group-hover:bg-brand-green group-hover:text-white transition-colors">
-                        <i class="fas fa-wind"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3 text-gray-900">General Servicing</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Routine cleaning of filters and covers to ensure clean airflow and efficiency.</p>
-                    <a href="#contact" class="text-brand-green font-semibold text-sm hover:underline">Book Now &rarr;</a>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Service Item 1 -->
+                <div class="bg-white p-6 border-2 border-black comic-shadow hover:-translate-y-2 transition-transform duration-300">
+                    <i class="fas fa-wind text-4xl text-brand-green mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">General Servicing</h3>
+                    <button class="text-sm underline font-bold text-gray-500">Learn More</button>
                 </div>
-
-                <!-- Service Card 2 -->
-                <div class="bg-white p-8 rounded-2xl shadow-card hover:shadow-soft transition-all duration-300 hover:-translate-y-1 group border border-transparent hover:border-green-100">
-                    <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-blue-500 text-2xl mb-6 group-hover:bg-blue-500 group-hover:text-white transition-colors">
-                        <i class="fas fa-spray-can"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3 text-gray-900">Chemical Wash</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Deep cleaning using chemical solutions to remove stubborn dirt and mold.</p>
-                    <a href="#contact" class="text-blue-600 font-semibold text-sm hover:underline">Book Now &rarr;</a>
+                <!-- Service Item 2 -->
+                <div class="bg-white p-6 border-2 border-black comic-shadow hover:-translate-y-2 transition-transform duration-300">
+                    <i class="fas fa-spray-can text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Chemical Wash</h3>
+                    <button class="text-sm underline font-bold text-gray-500">Learn More</button>
                 </div>
-
-                <!-- Service Card 3 -->
-                <div class="bg-white p-8 rounded-2xl shadow-card hover:shadow-soft transition-all duration-300 hover:-translate-y-1 group border border-transparent hover:border-green-100">
-                    <div class="w-14 h-14 bg-purple-50 rounded-xl flex items-center justify-center text-purple-500 text-2xl mb-6 group-hover:bg-purple-500 group-hover:text-white transition-colors">
-                        <i class="fas fa-prescription-bottle"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3 text-gray-900">Chemical Overhaul</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Full dismantling of the unit for a thorough chemical cleaning of all parts.</p>
-                    <a href="#contact" class="text-purple-600 font-semibold text-sm hover:underline">Book Now &rarr;</a>
+                <!-- Service Item 3 -->
+                <div class="bg-white p-6 border-2 border-black comic-shadow hover:-translate-y-2 transition-transform duration-300">
+                    <i class="fas fa-prescription-bottle text-4xl text-purple-600 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Chemical Overhaul</h3>
+                    <button class="text-sm underline font-bold text-gray-500">Learn More</button>
                 </div>
-
-                <!-- Service Card 4 -->
-                <div class="bg-white p-8 rounded-2xl shadow-card hover:shadow-soft transition-all duration-300 hover:-translate-y-1 group border border-transparent hover:border-green-100">
-                    <div class="w-14 h-14 bg-orange-50 rounded-xl flex items-center justify-center text-orange-500 text-2xl mb-6 group-hover:bg-orange-500 group-hover:text-white transition-colors">
-                        <i class="fas fa-gas-pump"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3 text-gray-900">Gas Top-Up</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Refilling coolant gas (R410A/R32) to restore cooling performance.</p>
-                    <a href="#contact" class="text-orange-600 font-semibold text-sm hover:underline">Book Now &rarr;</a>
+                <!-- Service Item 4 -->
+                <div class="bg-white p-6 border-2 border-black comic-shadow hover:-translate-y-2 transition-transform duration-300">
+                    <i class="fas fa-gas-pump text-4xl text-green-600 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Gas Top Up</h3>
+                    <button class="text-sm underline font-bold text-gray-500">Learn More</button>
                 </div>
-
-                <!-- Service Card 5 -->
-                <div class="bg-white p-8 rounded-2xl shadow-card hover:shadow-soft transition-all duration-300 hover:-translate-y-1 group border border-transparent hover:border-green-100">
-                    <div class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center text-red-500 text-2xl mb-6 group-hover:bg-red-500 group-hover:text-white transition-colors">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3 text-gray-900">Troubleshooting</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Expert diagnosis and repair for leaking, noisy, or warm aircon units.</p>
-                    <a href="#contact" class="text-red-600 font-semibold text-sm hover:underline">Book Now &rarr;</a>
+                <!-- Service Item 5 -->
+                <div class="bg-white p-6 border-2 border-black comic-shadow hover:-translate-y-2 transition-transform duration-300">
+                    <i class="fas fa-tools text-4xl text-gray-700 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Troubleshoot / Repair</h3>
+                    <button class="text-sm underline font-bold text-gray-500">Learn More</button>
                 </div>
-
-                <!-- Service Card 6 -->
-                <div class="bg-white p-8 rounded-2xl shadow-card hover:shadow-soft transition-all duration-300 hover:-translate-y-1 group border border-transparent hover:border-green-100">
-                    <div class="w-14 h-14 bg-cyan-50 rounded-xl flex items-center justify-center text-cyan-500 text-2xl mb-6 group-hover:bg-cyan-500 group-hover:text-white transition-colors">
-                        <i class="fas fa-snowflake"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3 text-gray-900">Installation</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Professional installation of new systems from top brands like Daikin & Mitsubishi.</p>
-                    <a href="#contact" class="text-cyan-600 font-semibold text-sm hover:underline">Book Now &rarr;</a>
+                <!-- Service Item 6 -->
+                <div class="bg-white p-6 border-2 border-black comic-shadow hover:-translate-y-2 transition-transform duration-300">
+                    <i class="fas fa-snowflake text-4xl text-cyan-400 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Installation</h3>
+                    <button class="text-sm underline font-bold text-gray-500">Learn More</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- PRICING SECTION -->
-    <section id="pricing" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col lg:flex-row gap-12 items-center">
-                <!-- Left: Info -->
-                <div class="w-full lg:w-1/3">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Transparent Pricing. <br>No Hidden Costs.</h2>
-                    <p class="text-gray-600 mb-8">We believe in honest pricing. Pay for quality service that lasts.</p>
-                    
-                    <div class="bg-gradient-to-br from-brand-green to-green-700 text-white p-6 rounded-2xl shadow-lg relative overflow-hidden">
-                        <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-white opacity-10 rounded-full"></div>
-                        <h3 class="font-bold text-lg mb-2"><i class="fas fa-tag mr-2"></i> 2025 PROMO</h3>
-                        <div class="text-4xl font-extrabold mb-1">$90</div>
-                        <p class="text-green-100 text-sm mb-4">For 4 Fan Coil Units</p>
-                        <div class="inline-block bg-white/20 px-3 py-1 rounded text-xs font-medium backdrop-blur-sm">
-                            Climate Vouchers Accepted
-                        </div>
+    <section id="pricing" class="py-16 bg-white relative">
+        <div class="container mx-auto px-4">
+            <!-- Promo Banner -->
+            <div class="bg-blue-600 text-white p-4 text-center font-bold text-xl uppercase border-2 border-black shadow-[4px_4px_0px_#000] mb-8 transform -rotate-1">
+                <i class="fas fa-tag mr-2"></i> 2025 PROMO: 4 UNITS FOR ONLY $90! (Climate Vouchers Accepted)
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+                <!-- Panda Mascot (Placeholder) -->
+                <div class="w-full md:w-1/3 text-center hidden md:block">
+                    <img src="https://placehold.co/300x400/fff/000?text=Cute+Panda+Mascot" alt="Mascot" class="mx-auto border-4 border-black rounded-lg">
+                    <div class="mt-4 bg-brand-yellow p-4 border-2 border-black comic-shadow font-black">
+                        "BEST PRICE IN TOWN LAH!"
                     </div>
                 </div>
 
-                <!-- Right: Table -->
-                <div class="w-full lg:w-2/3">
-                    <div class="bg-white rounded-2xl shadow-card border border-gray-100 overflow-hidden">
-                        <table class="w-full text-left">
+                <!-- Pricing Table -->
+                <div class="w-full md:w-2/3">
+                    <div class="overflow-x-auto border-2 border-black shadow-[6px_6px_0px_#000]">
+                        <table class="w-full text-left border-collapse">
                             <thead>
-                                <tr class="bg-gray-50 border-b border-gray-100">
-                                    <th class="p-5 font-semibold text-gray-500 text-sm uppercase tracking-wider">Unit Type</th>
-                                    <th class="p-5 font-semibold text-brand-green text-sm uppercase tracking-wider">One Time</th>
-                                    <th class="p-5 font-semibold text-gray-900 text-sm uppercase tracking-wider">Quarterly Contract</th>
+                                <tr class="bg-brand-green text-white">
+                                    <th class="p-4 border-b-2 border-black">No. of Units</th>
+                                    <th class="p-4 border-b-2 border-black bg-green-700">One Time Service</th>
+                                    <th class="p-4 border-b-2 border-black">Quarterly Contract</th>
                                 </tr>
                             </thead>
-                            <tbody class="divide-y divide-gray-50">
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="p-5 font-medium text-gray-700">1 Fan Coil</td>
-                                    <td class="p-5 font-bold text-gray-900">$40</td>
-                                    <td class="p-5 text-gray-400 text-sm italic">Not Available</td>
+                            <tbody class="font-bold">
+                                <tr class="bg-white border-b border-gray-300">
+                                    <td class="p-4 border-r border-gray-300">1 Fan Coil</td>
+                                    <td class="p-4 border-r border-gray-300">$40</td>
+                                    <td class="p-4 text-gray-400">N/A</td>
                                 </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="p-5 font-medium text-gray-700">2 Fan Coils</td>
-                                    <td class="p-5 font-bold text-gray-900">$50</td>
-                                    <td class="p-5 text-gray-600">$45 <span class="text-xs text-gray-400">/ service</span></td>
+                                <tr class="bg-gray-50 border-b border-gray-300">
+                                    <td class="p-4 border-r border-gray-300">2 Fan Coils</td>
+                                    <td class="p-4 border-r border-gray-300">$50</td>
+                                    <td class="p-4">$45 / service</td>
                                 </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="p-5 font-medium text-gray-700">3 Fan Coils</td>
-                                    <td class="p-5 font-bold text-gray-900">$70</td>
-                                    <td class="p-5 text-gray-600">$60 <span class="text-xs text-gray-400">/ service</span></td>
+                                <tr class="bg-white border-b border-gray-300">
+                                    <td class="p-4 border-r border-gray-300">3 Fan Coils</td>
+                                    <td class="p-4 border-r border-gray-300">$70</td>
+                                    <td class="p-4">$60 / service</td>
                                 </tr>
-                                <tr class="bg-green-50/50">
-                                    <td class="p-5 font-bold text-brand-green flex items-center gap-2">
-                                        4 Fan Coils <span class="bg-brand-green text-white text-[10px] px-2 py-0.5 rounded-full uppercase">Promo</span>
-                                    </td>
-                                    <td class="p-5 font-bold text-brand-green text-xl">$90</td>
-                                    <td class="p-5 font-semibold text-gray-900">$80 <span class="text-xs text-gray-400">/ service</span></td>
+                                <tr class="bg-yellow-50 border-b-2 border-black">
+                                    <td class="p-4 border-r border-gray-300 text-brand-green font-black">4 Fan Coils (PROMO)</td>
+                                    <td class="p-4 border-r border-gray-300 text-brand-green font-black">$90</td>
+                                    <td class="p-4">$80 / service</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <p class="text-xs text-gray-400 mt-3 text-right">*Prices subject to GST. Terms & conditions apply.</p>
+                    <div class="mt-4 text-center">
+                        <a href="#contact" class="inline-block bg-black text-white text-lg font-bold py-3 px-10 comic-shadow hover:bg-gray-800 transition">
+                            GET THIS PRICE NOW
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- WHY CHOOSE US -->
-    <section id="benefits" class="py-20 bg-brand-dark text-white relative overflow-hidden">
-        <!-- Background decorative pattern -->
-        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#00A651 1px, transparent 1px); background-size: 30px 30px;"></div>
-
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Homeowners Trust Us</h2>
-                <div class="w-20 h-1 bg-brand-green mx-auto rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+    <!-- WHY CHOOSE US (Green Section) -->
+    <section id="benefits" class="py-16 bg-brand-green text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-black text-center mb-10 text-white comic-header uppercase">Why Choose GREEN STAR AIRCON?</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Feature 1 -->
-                <div class="flex gap-4">
-                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 text-brand-green">
-                        <i class="fas fa-wallet text-xl"></i>
+                <div class="flex items-start gap-4">
+                    <div class="bg-white text-brand-green p-3 rounded-full border-2 border-black">
+                        <i class="fas fa-wallet text-2xl"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg mb-2">Affordable Pricing</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed">Competitive market rates with zero hidden charges. You pay exactly what we quote.</p>
+                        <h4 class="font-bold text-xl text-brand-yellow">Affordable Pricing</h4>
+                        <p class="text-sm mt-1">No hidden costs. Transparent pricing for all households.</p>
                     </div>
                 </div>
                 <!-- Feature 2 -->
-                <div class="flex gap-4">
-                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 text-brand-green">
-                        <i class="fas fa-user-check text-xl"></i>
+                <div class="flex items-start gap-4">
+                    <div class="bg-white text-brand-green p-3 rounded-full border-2 border-black">
+                        <i class="fas fa-user-check text-2xl"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg mb-2">Expert Technicians</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed">Our team consists of vetted professionals with over 10 years of field experience.</p>
+                        <h4 class="font-bold text-xl text-brand-yellow">Experienced Techs</h4>
+                        <p class="text-sm mt-1">Our team has 10+ years of experience in the field.</p>
                     </div>
                 </div>
                 <!-- Feature 3 -->
-                <div class="flex gap-4">
-                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 text-brand-green">
-                        <i class="fas fa-shield-alt text-xl"></i>
+                <div class="flex items-start gap-4">
+                    <div class="bg-white text-brand-green p-3 rounded-full border-2 border-black">
+                        <i class="fas fa-clock text-2xl"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg mb-2">90-Day Warranty</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed">We stand by our work. Any issues within 90 days are rectified at no extra cost.</p>
+                        <h4 class="font-bold text-xl text-brand-yellow">90 Days Warranty</h4>
+                        <p class="text-sm mt-1">Peace of mind with our workmanship warranty.</p>
                     </div>
                 </div>
                 <!-- Feature 4 -->
-                <div class="flex gap-4">
-                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 text-brand-green">
-                        <i class="fas fa-tint-slash text-xl"></i>
+                <div class="flex items-start gap-4">
+                    <div class="bg-white text-brand-green p-3 rounded-full border-2 border-black">
+                        <i class="fas fa-tint-slash text-2xl"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg mb-2">Leakage Specialists</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed">Using advanced vacuum technology to resolve water leakage issues permanently.</p>
+                        <h4 class="font-bold text-xl text-brand-yellow">No More Leaks</h4>
+                        <p class="text-sm mt-1">We fix leaking issues specifically with vacuum tech.</p>
                     </div>
                 </div>
                 <!-- Feature 5 -->
-                <div class="flex gap-4">
-                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 text-brand-green">
-                        <i class="fas fa-calendar-check text-xl"></i>
+                <div class="flex items-start gap-4">
+                    <div class="bg-white text-brand-green p-3 rounded-full border-2 border-black">
+                        <i class="fas fa-calendar-check text-2xl"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg mb-2">Fast Booking</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed">Seamless online booking process. Get confirmation within 60 minutes.</p>
+                        <h4 class="font-bold text-xl text-brand-yellow">Easy Booking</h4>
+                        <p class="text-sm mt-1">Book online in 2 minutes. Fast response time.</p>
                     </div>
                 </div>
                 <!-- Feature 6 -->
-                <div class="flex gap-4">
-                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 text-brand-green">
-                        <i class="fas fa-file-contract text-xl"></i>
+                <div class="flex items-start gap-4">
+                    <div class="bg-white text-brand-green p-3 rounded-full border-2 border-black">
+                        <i class="fas fa-shield-alt text-2xl"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg mb-2">Fully Licensed</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed">Registered with ACRA (UEN: 202600425H). We are a legitimate, insured entity.</p>
+                        <h4 class="font-bold text-xl text-brand-yellow">Fully Insured</h4>
+                        <p class="text-sm mt-1">We are a legitimate, registered company.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PROCESS (Clean Timeline) -->
-    <section id="process" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Cleaning Process</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">A systematic 10-step Standard Operating Procedure to ensure your unit is cleaned thoroughly and safely.</p>
-            </div>
-
-            <!-- Steps Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
-                <!-- Step 1 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:shadow-md transition">
-                    <div class="w-10 h-10 bg-brand-light text-brand-green rounded-full flex items-center justify-center font-bold mx-auto mb-4">1</div>
-                    <div class="h-16 mb-4 bg-gray-100 rounded-lg flex items-center justify-center text-gray-300 text-xs">IMG</div>
-                    <h5 class="font-bold text-gray-900 text-sm">Check Airflow</h5>
-                </div>
-                <!-- Step 2 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:shadow-md transition">
-                    <div class="w-10 h-10 bg-brand-light text-brand-green rounded-full flex items-center justify-center font-bold mx-auto mb-4">2</div>
-                    <div class="h-16 mb-4 bg-gray-100 rounded-lg flex items-center justify-center text-gray-300 text-xs">IMG</div>
-                    <h5 class="font-bold text-gray-900 text-sm">Dismantle Parts</h5>
-                </div>
-                <!-- Step 3 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:shadow-md transition">
-                    <div class="w-10 h-10 bg-brand-light text-brand-green rounded-full flex items-center justify-center font-bold mx-auto mb-4">3</div>
-                    <div class="h-16 mb-4 bg-gray-100 rounded-lg flex items-center justify-center text-gray-300 text-xs">IMG</div>
-                    <h5 class="font-bold text-gray-900 text-sm">Protect Area</h5>
-                </div>
-                <!-- Step 4 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:shadow-md transition">
-                    <div class="w-10 h-10 bg-brand-light text-brand-green rounded-full flex items-center justify-center font-bold mx-auto mb-4">4</div>
-                    <div class="h-16 mb-4 bg-gray-100 rounded-lg flex items-center justify-center text-gray-300 text-xs">IMG</div>
-                    <h5 class="font-bold text-gray-900 text-sm">Apply Chemical</h5>
-                </div>
-                <!-- Step 5 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:shadow-md transition">
-                    <div class="w-10 h-10 bg-brand-light text-brand-green rounded-full flex items-center justify-center font-bold mx-auto mb-4">5</div>
-                    <div class="h-16 mb-4 bg-gray-100 rounded-lg flex items-center justify-center text-gray-300 text-xs">IMG</div>
-                    <h5 class="font-bold text-gray-900 text-sm">Pressure Wash</h5>
-                </div>
-                 <!-- Step 6 -->
-                 <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:shadow-md transition">
-                    <div class="w-10 h-10 bg-brand-light text-brand-green rounded-full flex items-center justify-center font-bold mx-auto mb-4">6</div>
-                    <div class="h-16 mb-4 bg-gray-100 rounded-lg flex items-center justify-center text-gray-300 text-xs">IMG</div>
-                    <h5 class="font-bold text-gray-900 text-sm">Flush Drainage</h5>
-                </div>
-                <!-- Step 7 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:shadow-md transition">
-                    <div class="w-10 h-10 bg-brand-light text-brand-green rounded-full flex items-center justify-center font-bold mx-auto mb-4">7</div>
-                    <div class="h-16 mb-4 bg-gray-100 rounded-lg flex items-center justify-center text-gray-300 text-xs">IMG</div>
-                    <h5 class="font-bold text-gray-900 text-sm">Wipe Dry</h5>
-                </div>
-                <!-- Step 8 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:shadow-md transition">
-                    <div class="w-10 h-10 bg-brand-light text-brand-green rounded-full flex items-center justify-center font-bold mx-auto mb-4">8</div>
-                    <div class="h-16 mb-4 bg-gray-100 rounded-lg flex items-center justify-center text-gray-300 text-xs">IMG</div>
-                    <h5 class="font-bold text-gray-900 text-sm">Reinstall</h5>
-                </div>
-                <!-- Step 9 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:shadow-md transition">
-                    <div class="w-10 h-10 bg-brand-light text-brand-green rounded-full flex items-center justify-center font-bold mx-auto mb-4">9</div>
-                    <div class="h-16 mb-4 bg-gray-100 rounded-lg flex items-center justify-center text-gray-300 text-xs">IMG</div>
-                    <h5 class="font-bold text-gray-900 text-sm">Final Test</h5>
-                </div>
-                <!-- Step 10 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:shadow-md transition">
-                    <div class="w-10 h-10 bg-brand-light text-brand-green rounded-full flex items-center justify-center font-bold mx-auto mb-4">10</div>
-                    <div class="h-16 mb-4 bg-gray-100 rounded-lg flex items-center justify-center text-gray-300 text-xs">IMG</div>
-                    <h5 class="font-bold text-gray-900 text-sm">Service Report</h5>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section id="testimonials" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">What Our Clients Say</h2>
+    <!-- TESTIMONIALS (Video Grid) -->
+    <section id="testimonials" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-black mb-8">OUR HAPPY CUSTOMERS</h2>
             
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Video Review 1 -->
-                <div class="aspect-[9/16] bg-gray-900 rounded-2xl overflow-hidden relative shadow-lg cursor-pointer group hover:-translate-y-2 transition-transform duration-300">
-                    <img src="https://placehold.co/300x530/222/fff?text=Client+Review" class="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="w-12 h-12 bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white border border-white/50 group-hover:scale-110 transition">
-                            <i class="fas fa-play ml-1"></i>
-                        </div>
-                    </div>
-                    <div class="absolute bottom-4 left-4 text-white text-sm font-semibold">
-                        Jason L. <br> <span class="text-xs font-normal text-gray-300">Punggol</span>
-                    </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Video Placeholder 1 -->
+                <div class="aspect-[9/16] bg-black rounded-lg overflow-hidden relative shadow-lg cursor-pointer group">
+                    <img src="https://placehold.co/300x530/222/fff?text=Video+Review+1" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition">
+                    <i class="fas fa-play-circle text-white text-5xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></i>
                 </div>
-                 <!-- Video Review 2 -->
-                 <div class="aspect-[9/16] bg-gray-900 rounded-2xl overflow-hidden relative shadow-lg cursor-pointer group hover:-translate-y-2 transition-transform duration-300">
-                    <img src="https://placehold.co/300x530/333/fff?text=Client+Review" class="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="w-12 h-12 bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white border border-white/50 group-hover:scale-110 transition">
-                            <i class="fas fa-play ml-1"></i>
-                        </div>
-                    </div>
-                     <div class="absolute bottom-4 left-4 text-white text-sm font-semibold">
-                        Sarah Tan <br> <span class="text-xs font-normal text-gray-300">Tampines</span>
-                    </div>
+                <!-- Video Placeholder 2 -->
+                <div class="aspect-[9/16] bg-black rounded-lg overflow-hidden relative shadow-lg cursor-pointer group">
+                    <img src="https://placehold.co/300x530/333/fff?text=Video+Review+2" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition">
+                    <i class="fas fa-play-circle text-white text-5xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></i>
                 </div>
-                 <!-- Video Review 3 -->
-                 <div class="aspect-[9/16] bg-gray-900 rounded-2xl overflow-hidden relative shadow-lg cursor-pointer group hover:-translate-y-2 transition-transform duration-300">
-                    <img src="https://placehold.co/300x530/444/fff?text=Client+Review" class="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="w-12 h-12 bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white border border-white/50 group-hover:scale-110 transition">
-                            <i class="fas fa-play ml-1"></i>
-                        </div>
-                    </div>
-                     <div class="absolute bottom-4 left-4 text-white text-sm font-semibold">
-                        Mr. Lim <br> <span class="text-xs font-normal text-gray-300">Bedok</span>
-                    </div>
+                <!-- Video Placeholder 3 -->
+                <div class="aspect-[9/16] bg-black rounded-lg overflow-hidden relative shadow-lg cursor-pointer group">
+                    <img src="https://placehold.co/300x530/444/fff?text=Video+Review+3" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition">
+                    <i class="fas fa-play-circle text-white text-5xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></i>
                 </div>
-                 <!-- Video Review 4 -->
-                 <div class="aspect-[9/16] bg-gray-900 rounded-2xl overflow-hidden relative shadow-lg cursor-pointer group hover:-translate-y-2 transition-transform duration-300">
-                    <img src="https://placehold.co/300x530/555/fff?text=Client+Review" class="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="w-12 h-12 bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white border border-white/50 group-hover:scale-110 transition">
-                            <i class="fas fa-play ml-1"></i>
-                        </div>
-                    </div>
-                     <div class="absolute bottom-4 left-4 text-white text-sm font-semibold">
-                        Ahmad F. <br> <span class="text-xs font-normal text-gray-300">Yishun</span>
-                    </div>
+                <!-- Video Placeholder 4 -->
+                <div class="aspect-[9/16] bg-black rounded-lg overflow-hidden relative shadow-lg cursor-pointer group">
+                    <img src="https://placehold.co/300x530/555/fff?text=Video+Review+4" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition">
+                    <i class="fas fa-play-circle text-white text-5xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></i>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- BRANDS -->
-    <section class="py-10 border-t border-gray-100">
-        <div class="container mx-auto px-6 text-center">
-            <p class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-6">Expert Service for All Major Brands</p>
-            <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
-                <span class="text-2xl font-bold text-gray-700">DAIKIN</span>
-                <span class="text-2xl font-bold text-gray-700">MITSUBISHI</span>
-                <span class="text-2xl font-bold text-gray-700">PANASONIC</span>
-                <span class="text-2xl font-bold text-gray-700">LG</span>
-                <span class="text-2xl font-bold text-gray-700">SAMSUNG</span>
+    <!-- 10-STEP PROCESS (Comic Strip Style) -->
+    <section id="process" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-black text-center mb-2">HOW WE CLEAN YOUR AIRCON</h2>
+            <p class="text-center mb-10 text-gray-600 font-bold">Our 10-Step Standard Operating Procedure</p>
+
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+                <!-- Steps loop -->
+                <div class="step-card bg-white border-2 border-black p-2 text-center">
+                    <div class="bg-gray-200 h-24 mb-2 flex items-center justify-center font-bold text-gray-400">IMG 1</div>
+                    <div class="font-bold text-sm bg-brand-green text-white inline-block px-2 rounded-full mb-1">Step 1</div>
+                    <p class="text-xs font-bold leading-tight">Test run unit & check airflow</p>
+                </div>
+                <div class="step-card bg-white border-2 border-black p-2 text-center">
+                    <div class="bg-gray-200 h-24 mb-2 flex items-center justify-center font-bold text-gray-400">IMG 2</div>
+                    <div class="font-bold text-sm bg-brand-green text-white inline-block px-2 rounded-full mb-1">Step 2</div>
+                    <p class="text-xs font-bold leading-tight">Dismantle Cover & Filters</p>
+                </div>
+                <div class="step-card bg-white border-2 border-black p-2 text-center">
+                    <div class="bg-gray-200 h-24 mb-2 flex items-center justify-center font-bold text-gray-400">IMG 3</div>
+                    <div class="font-bold text-sm bg-brand-green text-white inline-block px-2 rounded-full mb-1">Step 3</div>
+                    <p class="text-xs font-bold leading-tight">Protect walls/furniture</p>
+                </div>
+                <div class="step-card bg-white border-2 border-black p-2 text-center">
+                    <div class="bg-gray-200 h-24 mb-2 flex items-center justify-center font-bold text-gray-400">IMG 4</div>
+                    <div class="font-bold text-sm bg-brand-green text-white inline-block px-2 rounded-full mb-1">Step 4</div>
+                    <p class="text-xs font-bold leading-tight">Apply Chemical Cleaner</p>
+                </div>
+                <div class="step-card bg-white border-2 border-black p-2 text-center">
+                    <div class="bg-gray-200 h-24 mb-2 flex items-center justify-center font-bold text-gray-400">IMG 5</div>
+                    <div class="font-bold text-sm bg-brand-green text-white inline-block px-2 rounded-full mb-1">Step 5</div>
+                    <p class="text-xs font-bold leading-tight">High Pressure Water Wash</p>
+                </div>
+                <div class="step-card bg-white border-2 border-black p-2 text-center">
+                    <div class="bg-gray-200 h-24 mb-2 flex items-center justify-center font-bold text-gray-400">IMG 6</div>
+                    <div class="font-bold text-sm bg-brand-green text-white inline-block px-2 rounded-full mb-1">Step 6</div>
+                    <p class="text-xs font-bold leading-tight">Clean Drainage Pipe</p>
+                </div>
+                <div class="step-card bg-white border-2 border-black p-2 text-center">
+                    <div class="bg-gray-200 h-24 mb-2 flex items-center justify-center font-bold text-gray-400">IMG 7</div>
+                    <div class="font-bold text-sm bg-brand-green text-white inline-block px-2 rounded-full mb-1">Step 7</div>
+                    <p class="text-xs font-bold leading-tight">Wipe Dry Components</p>
+                </div>
+                <div class="step-card bg-white border-2 border-black p-2 text-center">
+                    <div class="bg-gray-200 h-24 mb-2 flex items-center justify-center font-bold text-gray-400">IMG 8</div>
+                    <div class="font-bold text-sm bg-brand-green text-white inline-block px-2 rounded-full mb-1">Step 8</div>
+                    <p class="text-xs font-bold leading-tight">Reinstall Unit</p>
+                </div>
+                <div class="step-card bg-white border-2 border-black p-2 text-center">
+                    <div class="bg-gray-200 h-24 mb-2 flex items-center justify-center font-bold text-gray-400">IMG 9</div>
+                    <div class="font-bold text-sm bg-brand-green text-white inline-block px-2 rounded-full mb-1">Step 9</div>
+                    <p class="text-xs font-bold leading-tight">Final Test Run</p>
+                </div>
+                <div class="step-card bg-white border-2 border-black p-2 text-center">
+                    <div class="bg-gray-200 h-24 mb-2 flex items-center justify-center font-bold text-gray-400">IMG 10</div>
+                    <div class="font-bold text-sm bg-brand-green text-white inline-block px-2 rounded-full mb-1">Step 10</div>
+                    <p class="text-xs font-bold leading-tight">Generate Service Report</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRAND LOGOS (Grayscale) -->
+    <section id="brands" class="py-10 bg-gray-100 border-t-2 border-black">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-500 font-bold mb-4 uppercase tracking-widest">We Service All Major Brands</p>
+            <div class="flex flex-wrap justify-center gap-8 opacity-60">
+                <div class="font-black text-2xl text-gray-600">DAIKIN</div>
+                <div class="font-black text-2xl text-gray-600">MITSUBISHI</div>
+                <div class="font-black text-2xl text-gray-600">PANASONIC</div>
+                <div class="font-black text-2xl text-gray-600">LG</div>
+                <div class="font-black text-2xl text-gray-600">SAMSUNG</div>
+                <div class="font-black text-2xl text-gray-600">MIDEA</div>
             </div>
         </div>
     </section>
 
     <!-- BOOKING FORM SECTION -->
-    <section id="contact" class="py-24 bg-gray-50 relative">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
-                <!-- Left: Info -->
-                <div class="bg-brand-green text-white p-10 md:w-2/5 flex flex-col justify-between">
+    <section id="contact" class="py-16 bg-white relative">
+        <div class="container mx-auto px-4 max-w-2xl">
+            <div class="bg-white border-4 border-black p-8 shadow-[8px_8px_0px_#00A651]">
+                <h2 class="text-3xl font-black text-center mb-6 uppercase">Book Your Appointment</h2>
+                
+                <form class="space-y-4">
                     <div>
-                        <h3 class="text-2xl font-bold mb-4">Schedule Your Service</h3>
-                        <p class="text-green-100 mb-6">Fill out the form and our team will get back to you within 60 minutes.</p>
-                        
-                        <div class="space-y-4">
-                            <div class="flex items-center gap-3">
-                                <i class="fas fa-phone-alt"></i>
-                                <span>+65 1234 5678</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i class="fas fa-envelope"></i>
-                                <span>booking@greenstar.sg</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <i class="fas fa-map-marker-alt mt-1"></i>
-                                <span class="text-sm leading-relaxed">75 Lorong 14 Geylang, #01-01, Singapore 398960</span>
-                            </div>
+                        <label class="block font-bold mb-1">Full Name</label>
+                        <input type="text" class="w-full border-2 border-gray-300 p-3 focus:border-brand-green outline-none bg-gray-50" placeholder="Enter your name">
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block font-bold mb-1">Phone Number</label>
+                            <input type="tel" class="w-full border-2 border-gray-300 p-3 focus:border-brand-green outline-none bg-gray-50" placeholder="+65 xxxx xxxx">
+                        </div>
+                        <div>
+                            <label class="block font-bold mb-1">Email</label>
+                            <input type="email" class="w-full border-2 border-gray-300 p-3 focus:border-brand-green outline-none bg-gray-50" placeholder="your@email.com">
                         </div>
                     </div>
-                    <div class="mt-10">
-                        <img src="https://placehold.co/150x50/007a3d/ffffff?text=GREEN+STAR" alt="Logo" class="opacity-50">
+
+                    <div>
+                        <label class="block font-bold mb-1">Address</label>
+                        <textarea class="w-full border-2 border-gray-300 p-3 focus:border-brand-green outline-none bg-gray-50" rows="2" placeholder="Unit no, Street name..."></textarea>
                     </div>
-                </div>
 
-                <!-- Right: Form -->
-                <div class="p-10 md:w-3/5">
-                    <form class="space-y-5">
-                        <div class="space-y-1">
-                            <label class="text-sm font-semibold text-gray-700">Full Name</label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent transition" placeholder="John Doe">
+                    <div class="border-2 border-gray-200 p-4 rounded bg-gray-50">
+                        <label class="block font-bold mb-2 text-brand-green">Select Service Required:</label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" class="accent-brand-green w-5 h-5"> <span>General Servicing</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" class="accent-brand-green w-5 h-5"> <span>Chemical Wash</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" class="accent-brand-green w-5 h-5"> <span>Gas Top Up</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" class="accent-brand-green w-5 h-5"> <span>Repair/Inspection</span>
+                            </label>
                         </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                            <div class="space-y-1">
-                                <label class="text-sm font-semibold text-gray-700">Phone</label>
-                                <input type="tel" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent transition" placeholder="+65">
-                            </div>
-                            <div class="space-y-1">
-                                <label class="text-sm font-semibold text-gray-700">Email</label>
-                                <input type="email" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent transition" placeholder="john@example.com">
-                            </div>
-                        </div>
+                    </div>
 
-                        <div class="space-y-1">
-                            <label class="text-sm font-semibold text-gray-700">Address</label>
-                            <textarea class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent transition" rows="2" placeholder="Unit no, Street name..."></textarea>
-                        </div>
+                    <button type="submit" class="w-full bg-brand-green text-white font-black text-xl py-4 uppercase border-2 border-black shadow-[4px_4px_0px_#000] hover:translate-y-1 hover:shadow-none transition-all">
+                        Confirm Booking
+                    </button>
+                </form>
 
-                        <div class="space-y-2">
-                            <label class="text-sm font-semibold text-gray-700">Service Required</label>
-                            <div class="grid grid-cols-2 gap-3">
-                                <label class="flex items-center space-x-2 border border-gray-200 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition">
-                                    <input type="checkbox" class="accent-brand-green w-4 h-4 text-brand-green rounded"> <span class="text-sm">General Servicing</span>
-                                </label>
-                                <label class="flex items-center space-x-2 border border-gray-200 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition">
-                                    <input type="checkbox" class="accent-brand-green w-4 h-4 rounded"> <span class="text-sm">Chemical Wash</span>
-                                </label>
-                                <label class="flex items-center space-x-2 border border-gray-200 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition">
-                                    <input type="checkbox" class="accent-brand-green w-4 h-4 rounded"> <span class="text-sm">Gas Top Up</span>
-                                </label>
-                                <label class="flex items-center space-x-2 border border-gray-200 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition">
-                                    <input type="checkbox" class="accent-brand-green w-4 h-4 rounded"> <span class="text-sm">Repair</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="w-full bg-brand-green text-white font-bold text-lg py-4 rounded-lg shadow-lg hover:bg-green-700 hover:-translate-y-1 transition-all duration-300">
-                            Confirm Booking
-                        </button>
-                    </form>
-                </div>
+                <p class="text-center mt-4 text-xs text-gray-500">We will contact you within 1 hour to confirm the slot.</p>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-gray-900 text-white py-16 border-t border-gray-800">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <!-- Col 1 -->
-                <div class="md:col-span-1">
-                    <h3 class="text-xl font-bold mb-6 text-white">GREEN STAR <span class="text-brand-green">AIRCON</span></h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Providing Singapore's best air conditioning services with affordability, transparency, and professional expertise.</p>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-green transition"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-green transition"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-green transition"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                </div>
-
-                <!-- Col 2 -->
-                <div>
-                    <h4 class="font-bold text-white mb-6">Quick Links</h4>
-                    <ul class="space-y-3 text-sm text-gray-400">
-                        <li><a href="#hero" class="hover:text-brand-green transition">Home</a></li>
-                        <li><a href="#services" class="hover:text-brand-green transition">Our Services</a></li>
-                        <li><a href="#pricing" class="hover:text-brand-green transition">Pricing</a></li>
-                        <li><a href="#testimonials" class="hover:text-brand-green transition">Reviews</a></li>
-                    </ul>
-                </div>
-
-                 <!-- Col 3 -->
-                 <div>
-                    <h4 class="font-bold text-white mb-6">Legal</h4>
-                    <ul class="space-y-3 text-sm text-gray-400">
-                        <li><a href="#" class="hover:text-brand-green transition">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-brand-green transition">Terms of Service</a></li>
-                        <li><a href="#" class="hover:text-brand-green transition">Warranty Policy</a></li>
-                    </ul>
-                </div>
-
-                <!-- Col 4 -->
-                <div>
-                    <h4 class="font-bold text-white mb-6">Contact Us</h4>
-                    <ul class="space-y-3 text-sm text-gray-400">
-                        <li class="flex items-start gap-3">
-                            <i class="fas fa-map-marker-alt mt-1 text-brand-green"></i>
-                            <span>75 Lorong 14 Geylang, #01-01, Singapore 398960</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-phone text-brand-green"></i>
-                            <span>+65 1234 5678</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-envelope text-brand-green"></i>
-                            <span>hello@greenstar.sg</span>
-                        </li>
-                    </ul>
-                </div>
+    <footer class="bg-black text-white py-12 text-center border-t-8 border-brand-green">
+        <div class="container mx-auto px-4">
+            <h3 class="text-2xl font-black italic mb-4">GREEN STAR AIRCON PTE. LTD.</h3>
+            <p class="mb-6 text-gray-400 max-w-lg mx-auto">Providing the best air conditioning services in Singapore with affordable rates and professional technicians.</p>
+            <p class="mb-2 text-gray-400 font-bold">75 LORONG 14 GEYLANG, #01-01, SINGAPORE 398960</p>
+            <div class="flex justify-center gap-6 mb-8 text-2xl">
+                <a href="#" class="hover:text-brand-green"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-brand-green"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-brand-green"><i class="fab fa-tiktok"></i></a>
             </div>
 
-            <div class="border-t border-gray-800 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-                <p>&copy; 2026 GREEN STAR AIRCON PTE. LTD. All Rights Reserved.</p>
-                <p class="mt-2 md:mt-0">UEN: 202600425H</p>
+            <div class="text-sm text-gray-500 border-t border-gray-800 pt-6">
+                &copy; 2026 GREEN STAR AIRCON PTE. LTD. UEN: 202600425H. All Rights Reserved.
             </div>
         </div>
     </footer>
 
-    <!-- JS for Scrollspy -->
+    <!-- JavaScript for Dot Navigation -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const sections = document.querySelectorAll('section');
             const navDots = document.querySelectorAll('.dot-nav a');
 
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5 // Trigger when 50% of section is visible
+            };
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const id = entry.target.getAttribute('id');
+                        
+                        // Remove active class from all
                         navDots.forEach(dot => {
-                            dot.classList.remove('bg-brand-green', 'scale-125');
-                            dot.classList.add('bg-gray-300');
+                            dot.classList.remove('active', 'scale-150', 'bg-brand-green');
+                            dot.classList.add('bg-gray-400');
                         });
+
+                        // Add active class to current
                         const activeDot = document.querySelector(`.dot-nav a[href="#${id}"]`);
                         if(activeDot) {
-                            activeDot.classList.remove('bg-gray-300');
-                            activeDot.classList.add('bg-brand-green', 'scale-125');
+                            activeDot.classList.add('active', 'scale-150', 'bg-brand-green');
+                            activeDot.classList.remove('bg-gray-400');
                         }
                     }
                 });
-            }, { threshold: 0.5 });
+            }, observerOptions);
 
-            sections.forEach(section => observer.observe(section));
+            sections.forEach(section => {
+                observer.observe(section);
+            });
         });
     </script>
 </body>
